@@ -11,19 +11,22 @@ router.use(bodyParser.json());
 router.post('/calculate', calculate);
 
 async function calculate(req, res) {
-  const a = parseInt(req.body.firstOperand);
-  const b =  parseInt(req.body.secondOperand);
+  const first = parseInt(req.body.firstOperand);
+  const second =  parseInt(req.body.secondOperand);
+  const operator =  parseInt(req.body.operator);
 
-  const sum = await getSum(a, b);
-
-  // res.setHeader('Access-Control-Allow-Origin', '*');
-  res.send(sum.toString());
+  try {
+    const result = await getBinaryOperation(first, second, operator);
+    res.send(result.toString());
+  } catch (e) {
+    res.send(e.message)
+  }
 }
 
-async function getSum(a, b) {
+async function getBinaryOperation(firstOperand, secondOperand, operator) {
 
   const web3 = new Web3(new Web3.providers.HttpProvider( `https://rinkeby.infura.io/v3/${infuraKey}`));
-  const helloWorld = new web3.eth.Contract([
+  const calcContract = new web3.eth.Contract([
     {
       "inputs": [
         {
@@ -35,9 +38,14 @@ async function getSum(a, b) {
           "internalType": "int256",
           "name": "b",
           "type": "int256"
+        },
+        {
+          "internalType": "enum Calc.BinaryOperator",
+          "name": "op",
+          "type": "uint8"
         }
       ],
-      "name": "getsum",
+      "name": "getBinaryOperation",
       "outputs": [
         {
           "internalType": "int256",
@@ -48,13 +56,16 @@ async function getSum(a, b) {
       "stateMutability": "pure",
       "type": "function"
     }
-  ], '0xe7c923A3faDd0B47458ec823bE3C291930D1D597');
+  ], '0xB19B8Df2F04A191386F087a64eaa2f7374810304');
 
   const pr = new Promise((resolve, reject) => {
-    helloWorld.methods.getsum(a, b).call({from: rinkebyWallet}, function(error, result) {
-      console.log(result);
-      resolve(result);
-      //return result;
+    calcContract.methods.getBinaryOperation(firstOperand, secondOperand, operator).call({from: rinkebyWallet}, function(error, result) {
+      if (error) {
+        reject(error);
+      } else {
+        console.log(result);
+        resolve(result);
+      }
     });
   });
 
@@ -62,8 +73,5 @@ async function getSum(a, b) {
 }
 
 module.exports = router;
-
-
-//const infuraKey = "be6c45e09ed54abfbc60d0f18b0a080c"// process.env.INFURA_KEY;
 
 
