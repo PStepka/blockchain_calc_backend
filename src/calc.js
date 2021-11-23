@@ -10,15 +10,16 @@ module.exports = {calculate}
 
 async function calculate(req, res) {
     const first = parseInt(req.body.firstOperand);
-    const second = req.body.secondOperand ? parseInt(req.body.secondOperand): undefined;
+    const second = req.body.secondOperand !== undefined ? parseInt(req.body.secondOperand): undefined;
     const operator =  parseInt(req.body.operator);
 
     try {
-        const result = second? await getBinaryOperation(first, second, operator) :
+        const result = second !== undefined ? await getBinaryOperation(first, second, operator) :
             await getUnaryOperation(first, operator);
         res.send(result.toString());
     } catch (e) {
-        res.send(e.message)
+        res.statusMessage = e.message;
+        res.status(400).end();
     }
 }
 

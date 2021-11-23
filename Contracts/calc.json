@@ -108,11 +108,11 @@
   },
   "sources": {
     "contracts/4_Calc.sol": {
-      "keccak256": "0x75f060fcd4be5f1e9717fc13e95251e2efcc10499ab651a5e2cb845c4fb8c7d7",
+      "keccak256": "0xac36d5c359f7a97ddd759be2799ae4219f1a5f099fd578ffdc069625ba89b05f",
       "license": "GPL-3.0",
       "urls": [
-        "bzz-raw://934dbba6c336762c507f2cad65f17aff8a04c5e64c8f5512a964bfde4ef292dd",
-        "dweb:/ipfs/QmR2fUAaTeNF4heoFD5MtAjWVmV4ipA1wtrFfPUPMc9FjL"
+        "bzz-raw://78e4bc485888aa7c156be74ea7dd074757a489f4dfd93acb1c08403d14603e45",
+        "dweb:/ipfs/QmYhk3WFTRBRCE5Ax5bHdWc2RaeWSM6kgv6RcEvAtGvKxG"
       ]
     }
   },
