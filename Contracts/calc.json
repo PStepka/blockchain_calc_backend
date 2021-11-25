@@ -9,12 +9,12 @@
         "inputs": [
           {
             "internalType": "int256",
-            "name": "a",
+            "name": "first",
             "type": "int256"
           },
           {
             "internalType": "int256",
-            "name": "b",
+            "name": "second",
             "type": "int256"
           },
           {
@@ -38,7 +38,7 @@
         "inputs": [
           {
             "internalType": "int256",
-            "name": "a",
+            "name": "first",
             "type": "int256"
           },
           {
@@ -79,10 +79,8 @@
       }
     ],
     "devdoc": {
-      "details": "Store & retrieve value in a variable",
       "kind": "dev",
       "methods": {},
-      "title": "Storage",
       "version": 1
     },
     "userdoc": {
@@ -108,11 +106,11 @@
   },
   "sources": {
     "contracts/4_Calc.sol": {
-      "keccak256": "0xac36d5c359f7a97ddd759be2799ae4219f1a5f099fd578ffdc069625ba89b05f",
+      "keccak256": "0x6eb2a76e97a5b95a52aeede89752856a0b4b79f30074f0b1e1b8beb6f4fbd85b",
       "license": "GPL-3.0",
       "urls": [
-        "bzz-raw://78e4bc485888aa7c156be74ea7dd074757a489f4dfd93acb1c08403d14603e45",
-        "dweb:/ipfs/QmYhk3WFTRBRCE5Ax5bHdWc2RaeWSM6kgv6RcEvAtGvKxG"
+        "bzz-raw://1bcb9c3b17d7eeccf903cae31bd1b0888fc695b4e269ba60c2b6ffa7ad397758",
+        "dweb:/ipfs/QmTMAHnukdr5FSbo92teFYPFzEPJf99ncELuPbfgwUtkyQ"
       ]
     }
   },
