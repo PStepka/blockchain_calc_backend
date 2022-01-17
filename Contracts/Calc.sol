@@ -4,6 +4,8 @@ pragma solidity >=0.7.0 <0.9.0;
 
 contract Calc {
 
+    int256 storedNumber;
+
     enum BinaryOperator {Sum, Subtract, Divide, Multiply}
     enum UnaryOperator {Invert, Sqrt}
 
@@ -36,5 +38,13 @@ contract Calc {
             y = z;
             z = (x / z + z) / 2;
         }
+    }
+
+    function store(int256 x) public {
+        storedNumber = x;
+    }
+
+    function get() public view returns (int256) {
+        return storedNumber;
     }
 }

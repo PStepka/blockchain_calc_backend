@@ -6,6 +6,19 @@
   "output": {
     "abi": [
       {
+        "inputs": [],
+        "name": "get",
+        "outputs": [
+          {
+            "internalType": "int256",
+            "name": "",
+            "type": "int256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
         "inputs": [
           {
             "internalType": "int256",
@@ -76,6 +89,19 @@
         ],
         "stateMutability": "pure",
         "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "int256",
+            "name": "x",
+            "type": "int256"
+          }
+        ],
+        "name": "store",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
       }
     ],
     "devdoc": {
@@ -91,7 +117,7 @@
   },
   "settings": {
     "compilationTarget": {
-      "contracts/4_Calc.sol": "Calc"
+      "contracts/calc.sol": "Calc"
     },
     "evmVersion": "london",
     "libraries": {},
@@ -105,12 +131,12 @@
     "remappings": []
   },
   "sources": {
-    "contracts/4_Calc.sol": {
-      "keccak256": "0x6eb2a76e97a5b95a52aeede89752856a0b4b79f30074f0b1e1b8beb6f4fbd85b",
+    "contracts/calc.sol": {
+      "keccak256": "0x83aeacd2382910e0fe814f622e58716b6d07badd14675b648ba780702c8aaa44",
       "license": "GPL-3.0",
       "urls": [
-        "bzz-raw://1bcb9c3b17d7eeccf903cae31bd1b0888fc695b4e269ba60c2b6ffa7ad397758",
-        "dweb:/ipfs/QmTMAHnukdr5FSbo92teFYPFzEPJf99ncELuPbfgwUtkyQ"
+        "bzz-raw://056b72b2cee4edad26aa089af224a966dade4bdfab00d409d200268a93e56d7e",
+        "dweb:/ipfs/QmYmfYZfDssJgS9n4BsE1eu7d5xRuoXLs24FY9z4wBFE19"
       ]
     }
   },
