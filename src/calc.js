@@ -6,7 +6,7 @@ const mumbaiWallet = process.env.MUMBAI_WALLET_ADDRESS || null;
 const contract = require("../Contracts/calc.json");
 const contract_address = process.env.CONTRACT_ADDRESS || null;
 
-module.exports = {calculate, store, get}
+module.exports = {calculate, get}
 
 async function calculate(req, res) {
     const first = req.body.firstOperand !== undefined ? parseInt(req.body.firstOperand): undefined;

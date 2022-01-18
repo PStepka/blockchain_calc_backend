@@ -1,9 +1,9 @@
+import "./eip712.sol";
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity >=0.7.0 <0.9.0;
+pragma solidity >=0.6.12 <0.9.0;
 
-contract Calc {
-
+contract Calc is EIP712MetaTransaction("mycalc", "1") {
     int256 storedNumber;
 
     enum BinaryOperator {Sum, Subtract, Divide, Multiply}
@@ -40,7 +40,7 @@ contract Calc {
         }
     }
 
-    function store(int256 x) public {
+    function store(int256 x) payable public {
         storedNumber = x;
     }
 
